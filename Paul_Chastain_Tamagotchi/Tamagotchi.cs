@@ -1,15 +1,15 @@
-using System.Transactions;
 using System;
 
 public class Tamagotchi
 {
+    bool isCreated = false;
     int hunger = 10;
     int boredom = 10;
     bool isAlive = true;
-    public string name;
+    public string name = "None";
 
     List<string?> words = new();
-    Random rdm;
+    Random rdm = new Random();
 
     public void Feed()
     {
