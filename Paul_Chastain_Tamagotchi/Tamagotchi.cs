@@ -6,7 +6,7 @@ public class Tamagotchi
     int hunger = 10;
     int boredom = 10;
     bool isAlive = true;
-    public string name = "None";
+    public string? name = "";
 
     List<string?> words = new();
     Random rdm = new Random();
@@ -18,7 +18,8 @@ public class Tamagotchi
 
     public void Hi()
     {
-
+        int word = rdm.Next(words.Count);
+        Console.WriteLine($"{name} says {words[word]}");
     }
 
     public void Teach()
@@ -41,7 +42,9 @@ public class Tamagotchi
 
     public void Printstats()
     {
-        
+        Console.WriteLine();
+        Console.WriteLine($"Hunger: {hunger}");
+        Console.WriteLine($"Boredom: {boredom}");
     }
 
     public bool getAlive()
